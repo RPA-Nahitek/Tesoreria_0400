@@ -1,0 +1,33 @@
+{
+  "name": "ReportingTesoreria",
+  "description": "Blank Process",
+  "main": "Main.xaml",
+  "dependencies": {
+    "UiPath.Database.Activities": "[1.0.7053.27728]",
+    "UiPath.Excel.Activities": "[2.8.0-preview]",
+    "UiPath.Mail.Activities": "[1.8.0-preview]",
+    "UiPath.System.Activities": "[19.12.0-preview]",
+    "UiPath.UIAutomation.Activities": "[19.12.0-preview]",
+    "UiPath.WebAPI.Activities": "[1.4.4]",
+    "BalaReva.Externals.Activities": "[4.0.3]"
+  },
+  "schemaVersion": "3.2",
+  "studioVersion": "18.4.3.0",
+  "projectVersion": "1.0.7445.35722",
+  "runtimeOptions": {
+    "autoDispose": false,
+    "excludedLoggedData": [
+      "Private:*",
+      "*password*"
+    ]
+  },
+  "projectType": "Workflow",
+  "libraryOptions": {
+    "includeOriginalXaml": false,
+    "privateWorkflows": []
+  },
+  "arguments": {
+    "input": [],
+    "output": []
+  }
+}

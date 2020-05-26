@@ -1,0 +1,106 @@
+﻿<Activity mc:Ignorable="sap sap2010 sads" x:Class="MueveaCompartida" this:MueveaCompartida.in_CarpetaComprimir="C:\Users\Administrador\Documents\Tesoreria\TES_DESCARGA_MOVIMIENTOS - copia\Excel_proceso\20200406" this:MueveaCompartida.in_Destino="Y:\Tesorería\ExcelsProceso\" this:MueveaCompartida.rutadia="20200406"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:be="clr-namespace:BalaReva.Externals;assembly=BalaReva.Externals"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities"
+ xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+ xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+ xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
+ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+ xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib"
+ xmlns:this="clr-namespace:"
+ xmlns:ui="http://schemas.uipath.com/workflow/activities"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_CarpetaComprimir" Type="InArgument(x:String)" />
+    <x:Property Name="in_Destino" Type="InArgument(x:String)" />
+    <x:Property Name="rutadia" Type="InArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>MueveaCompartida_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Plugin.Workflow</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="MueveaCompartida" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="ui:GenericValue" Name="str_pathFileZIP" />
+    </Sequence.Variables>
+    <Assign sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="ui:GenericValue">[str_pathFileZIP]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="ui:GenericValue">[in_Destino+rutadia+".rar"]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <be:ZipFiles MultipleFolders="{x:Null}" Password="{x:Null}" DisplayName="Zip" sap2010:WorkflowViewState.IdRef="ZipFiles_1" SourceFolder="[in_CarpetaComprimir]" ZipFile="[str_pathFileZIP]" />
+    <be:UnZipFile Password="{x:Null}" CodePage="1252" DisplayName="UnZip" ExtractFolderPath="[in_Destino]" sap2010:WorkflowViewState.IdRef="UnZipFile_1" ZipFile="[str_pathFileZIP]" />
+    <ui:Delete ContinueOnError="{x:Null}" Path="[str_pathFileZIP]" sap2010:WorkflowViewState.IdRef="Delete_1" />
+    <sads:DebugSymbol.Symbol>d5UBQzpcVXNlcnNcQWRtaW5pc3RyYWRvclxEb2N1bWVudHNcVGVzb3JlcmlhXFRFU19ERVNDQVJHQV9NT1ZJTUlFTlRPUyAtIGNvcGlhXFRFU18wMDFfMDIwMF9EZXNjYXJnYV9Nb3ZpbWllbnRvc19CYW5jYXJpb3MgLSBjb3BpYVxNdWV2ZWFDb21wYXJ0aWRhLnhhbWwQAXAB0wEBBAH2AQGSAgEDAbICAbsCAQJJA1kOAgEBTQVUDgIBDVUFVcMBAgEJVgVWuAECAQRXBVdxAgECUjdSUgIBEE84T0kCAQ5VjQFVpAECAQtVrQFVwAECAQpWXVZrAgEHVqIBVrUBAgEGVjBWNgIBBVcwV0MCAQM=</sads:DebugSymbol.Symbol>
+  </Sequence>
+  <sap2010:WorkflowViewState.ViewStateManager>
+    <sap2010:ViewStateManager>
+      <sap2010:ViewStateData Id="Assign_1" sap:VirtualizedContainerService.HintSize="474.666666666667,62" />
+      <sap2010:ViewStateData Id="ZipFiles_1" sap:VirtualizedContainerService.HintSize="474.666666666667,22" />
+      <sap2010:ViewStateData Id="UnZipFile_1" sap:VirtualizedContainerService.HintSize="474.666666666667,106.666666666667" />
+      <sap2010:ViewStateData Id="Delete_1" sap:VirtualizedContainerService.HintSize="474.666666666667,22" />
+      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="496.666666666667,456.666666666667">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="MueveaCompartida_1" sap:VirtualizedContainerService.HintSize="536.666666666667,536.666666666667" />
+    </sap2010:ViewStateManager>
+  </sap2010:WorkflowViewState.ViewStateManager>
+</Activity>

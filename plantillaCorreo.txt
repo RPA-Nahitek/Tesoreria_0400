@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600;800&display=swap" rel="stylesheet">
+</head>
+<style>
+    body {
+        font-family: 'Open Sans', sans-serif;
+        font-size: 1rem;
+        line-height: 2;
+    }
+    
+    h1 {
+        font-size: 80px;
+        margin: 0;
+        padding: 0;
+    }
+    
+    p {
+        margin-top: 0;
+    }
+    
+    .cuerpo {
+        color: white;
+        max-width: 550px;
+        padding: 10px 30px 40px 30px;
+        background-image: linear-gradient(to bottom, rgb(0, 183, 255), blue);
+        border-radius: 10px;
+        margin: auto;
+    }
+    
+    .cuerpo img {
+        width: 40px;
+        margin-right: 15px;
+    }
+    
+    .centrado {
+        margin: 0 12%;
+    }
+    
+    .estadistica {
+        display: flex;
+        align-items: center;
+    }
+    
+    .estadistica h3 {
+        margin: 12px;
+        font-weight: 600;
+    }
+    
+    span {
+        font-weight: 800;
+    }
+    
+    .tabla {
+        background-color: blue;
+        color: white;
+        border-radius: 10px;
+        padding: 50px;
+        width: 60%;
+        align: center;
+        margin: 0 auto;
+    }
+    
+    .tabla img {
+        width: 40px;
+        margin-right: 15px;
+    }
+</style>
+
+<body>
+    <table class="tabla">
+        <tr>
+            <td>
+                <h1>Hola!</h1>
+                <p>Ya ha finalizado la ejecución de hoy. El resultado ha sido el siguiente:
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="centrado">
+                    <div class="estadistica">
+                        <img src="https://image.flaticon.com/icons/svg/619/619709.svg" alt="correct">
+                        <h3> <span> %SUCCESSFUL </span> cuentas correctas</h3>
+                    </div>
+                    <div class="estadistica">
+                        <img src="https://image.flaticon.com/icons/svg/2531/2531411.svg" alt="correct">
+                        <h3><span> %FAILED </span> cuentas a revisar</h3>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>

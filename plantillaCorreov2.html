@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600;800&display=swap" rel="stylesheet">
+</head>
+<style>
+    body {
+        font-family: 'Open Sans', sans-serif;
+        font-size: 1rem;
+    }
+    
+    h1 {
+        font-size: 80px;
+        margin: 0;
+        padding: 0;
+    }
+    
+    p {
+        margin-top: 0;
+    }
+    
+    .tabla {
+        background-color: blue;
+        color: white;
+        border-radius: 10px;
+        padding: 5px 40px;
+        width: 100%;
+        align: center;
+        margin: 0 auto;
+    }
+    /*table,
+    th,
+    td {
+        border: 1px solid black;
+    }*/
+    
+    .tabla svg {
+        width: 120px;
+        margin-right: 15px;
+    }
+    
+    h3 {
+        margin: 12px;
+        font-weight: 100;
+    }
+    
+    h3 span {
+        font-weight: 800;
+    }
+</style>
+
+<body>
+    <table class="tabla">
+        <tr style="max-height: 160px;">
+            <td>
+                <h1>Hola!</h1>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>Ya ha finalizado la ejecución de hoy con los movimientos del día %AYER. El resultado ha sido el siguiente:
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+
+
+                <table style="background-color:blue; margin: 0 auto;">
+                    <tr>
+                        <td>
+                            <span style='font-size:50px; font-weight:800'>&#129299;</span>
+                            <td>
+                                <h3> <span> %SUCCESSFUL </span> cuentas correctas</h3>
+                            </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span style='font-size:50px; font-weight:800'>&#129301;</span>
+                            <td>
+                                <h3><span> %FAILED </span> cuentas a revisar</h3>
+                            </td>
+                    </tr>
+                </table>
+
+
+                </td>
+
+        </tr>
+        <tr>
+            <td>
+                <p style="margin-top: 20px;">Esto supone un éxito del <span style="background-color:  rgb(106, 199, 14); font-weight: 800;">&nbsp; %EXITO% &nbsp;</span> y un error del <span style="background-color: rgb(245, 10, 120); font-weight: 800;">&nbsp; %ERROR% &nbsp;</span>.
+                </p>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p style="margin-top: 20px;">Para más detalle consulta el Reporting de la ejecución. </p>
+                <p style="margin-bottom: 40px;">Se adjunta el POSIC y el ZMOV.
+                </p>
+
+                <h3 style="margin: 0 0 40px 0;">¡Que tengas un buen día!
+                </h3>
+            </td>
+        </tr>
+    </table>
+
+
+
+</body>
+
+</html>
